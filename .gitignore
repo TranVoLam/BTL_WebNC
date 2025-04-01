@@ -1,0 +1,12 @@
+bin/
+obj/
+
+Properties/
+appsettings.json
+appsettings.Development.json
+
+.vscode/
+wwwroot/lib/
+Views/_ViewImports.cshtml
+Views/Shared/_ValidationScriptsPartial.cshtml
+
