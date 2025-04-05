@@ -10,7 +10,7 @@ public class Review {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    [Required(ErrorMessage = "Đừng quên tiêu đề nhé")]
+    [Required(AllowEmptyStrings = false, ErrorMessage = "Đừng quên tiêu đề nhé")]
     [Column(TypeName = "NVARCHAR(255)")]
     public string Title { get; set; } = string.Empty;
     
@@ -19,11 +19,12 @@ public class Review {
     [Column(TypeName = "DATETIME2(2)")]
     public DateTime CreateAt { get; set; }
 
-    [Required(ErrorMessage = "Hãy đánh giá gì đó nhé")]
+    [Required(AllowEmptyStrings = false, ErrorMessage = "Hãy đánh giá gì đó nhé")]
     [Column(TypeName = "NVARCHAR(MAX)")]
     public string Content { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "Đánh giá nhé")]
+    [Range(1, 5, ErrorMessage = "Đánh giá từ 1 đến 5 nhé")]
     public byte Rating { get; set; }
 
     [Required]

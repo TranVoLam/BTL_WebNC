@@ -9,7 +9,7 @@ public class User {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    [Required(ErrorMessage = "Email không thể để trống")]
+    [Required(AllowEmptyStrings = false, ErrorMessage = "Email không thể để trống")]
     [DataType(DataType.EmailAddress)]
     [Column(TypeName = "NVARCHAR(254)")]
     public string Email { get; set; } = string.Empty;
@@ -19,7 +19,7 @@ public class User {
     public string PasswordHash { get; set; } = string.Empty;
 
     [NotMapped]
-    [Required(ErrorMessage = "Mật khẩu không được để trống")]
+    [Required(AllowEmptyStrings = false, ErrorMessage = "Mật khẩu không được để trống")]
     [MaxLength(50, ErrorMessage = "Mật khẩu tối đa là 50 kí tự")]
     [MinLength(10, ErrorMessage = "Mật khẩu tối thiểu là 10 kí tự")]
     public string Password { get; set; } = string.Empty;

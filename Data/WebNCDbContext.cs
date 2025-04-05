@@ -88,9 +88,6 @@ public class WebNCDbContext : DbContext {
         .Property(rp => rp.ReportStatus)
         .HasDefaultValue(false);
 
-        modelBuilder.Entity<Report>()
-        .ToTable(t => t.HasCheckConstraint("CK_Reports_Result", "Result IN ('YES', 'NO')"));
-
         // Comment
         modelBuilder.Entity<Comment>()
         .HasOne(c => c.User)

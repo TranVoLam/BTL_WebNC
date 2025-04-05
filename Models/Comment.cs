@@ -29,5 +29,8 @@ public class Comment {
     public Comment? Parent { get; set; }
 
     public ICollection<Comment> Children { get; set; } = new List<Comment>();
+<<<<<<< HEAD
     
+=======
+>>>>>>> e374e4d (Hoàn thành các model)
 }

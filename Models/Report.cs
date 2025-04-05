@@ -28,8 +28,8 @@ public class Report {
     [Column(TypeName = "BIT")]
     public bool ReportStatus { get; set; } = false;
 
-    [Column(TypeName = "VARCHAR(5)")]
-    public string? Result { get; set; }
+    [Column(TypeName = "BIT")]
+    public bool? Result { get; set; }
 
     public int? LockDays { get; set; }
 
